@@ -29,7 +29,7 @@ function over15(sumCard) {
 // Check vicintore
 function majorSum(dealer, player) {
 
-    if (dealer > player || dealer == player) {
+    if (dealer >= player) {
         console.log("Dealer wins!");
     } else {
         console.log("Player wins!");
