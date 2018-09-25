@@ -64,9 +64,15 @@
         // !=   loose not-equals
         2 != "1";
         2 != 1;
+<<<<<<< HEAD
         // ===  strict-equals Condisera anche i tipi con i tre uguali 
         2 === "2"; //ritorna false perche i tipi sono diversi
         2 === 2; //ritorna true perche sono uguali come tipologia
+=======
+        // ===  strict-equals
+        2 === "2";
+        2 === 2;
+>>>>>>> 4f04ba34346105bac89be719317cec413a8f5436
         // !==  strict not-equals
         2 !== "2";
         2 !== 2;

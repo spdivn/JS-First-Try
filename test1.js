@@ -18,6 +18,20 @@ const Component_3 = "Monitor";
 const Component_4 = "Cable";
 const Component_5 = "Case and Hardware";
 
+//Variabile per contare pezzi del bundle se eventualmente mancano >=8
+var Pezzi_Acquistabili = 0;
+
+//Funzione per controllo in magazzino
+function checkQt(QuantityComponent, totaleNecessario, componente) {
+    if (QuantityComponent >= totaleNecessario) {
+        console.log(componente + " è in magazzino");
+        Pezzi_Acquistabili++;
+    } else {
+        console.log(componente + " non è in magazzino");
+    }
+}
+
+
 // Variables
 var money_in_the_poket = 5000;
 
@@ -53,32 +67,20 @@ let QuantityComponent_3 = 1;
 let QuantityComponent_4 = 1;
 let QuantityComponent_5 = 2;
 
-var Puoi_Pagare = 0;
-
-//Funzione per controllo in magazzino
-function mancano(QuantityComponent, totaleNecessario, componente) {
-    if (QuantityComponent >= totaleNecessario) {
-        console.log(componente + " è in magazzino");
-        Puoi_Pagare++;
-    } else {
-        console.log(componente + " non è in magazzino");
-    }
-}
-
 //Stampa dei vari prezzi
 console.log(BundleProductPrice + CURRENCY);
 console.log(BundleProductPriceWithTax + CURRENCY + " con tasse");
 console.log(BundleProductPriceWithShipment + CURRENCY + " con spedizione");
 
 //Controllo componenti in magazzino tramite funzione
-mancano(QuantityComponent_1, 1, Component_1);
-mancano(QuantityComponent_2, 1, Component_2);
-mancano(QuantityComponent_3, 1, Component_3);
-mancano(QuantityComponent_4, 2, Component_4);
-mancano(QuantityComponent_5, 2, Component_5);
+checkQt(QuantityComponent_1, 1, Component_1);
+checkQt(QuantityComponent_2, 1, Component_2);
+checkQt(QuantityComponent_3, 1, Component_3);
+checkQt(QuantityComponent_4, 2, Component_4);
+checkQt(QuantityComponent_5, 2, Component_5);
 
 //Controllo se il cliente può pagare il totale 
-if (Puoi_Pagare >= BundleProductPiece) {
+if (Pezzi_Acquistabili >= BundleProductPiece) {
     if (BundleProductPriceWithTax <= money_in_the_poket) {
         console.log("Puoi pagare");
     } else {
@@ -87,4 +89,3 @@ if (Puoi_Pagare >= BundleProductPiece) {
 } else {
     console.log("Ci scusiamo per il disagio ma non ci sono tutti i pezzi del bundle in magazzino!");
 }
-
