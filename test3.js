@@ -15,7 +15,6 @@
  *
  */
 
-
 /**
  * Check se la somma va oltre la soglia prevista 
  * 
@@ -37,7 +36,6 @@ function over15(sumCard) {
  * @param {number} player 
  */
 function majorSum(dealer, player) {
-
     if (dealer >= player) {
         console.log("Dealer wins!");
     } else {
