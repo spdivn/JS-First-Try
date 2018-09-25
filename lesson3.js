@@ -39,7 +39,9 @@ if (typeof incrementoPrezzoProdotto == "string") {
 }
 
 // ternary (io la chiamo "if inline" però non ascoltatemi/leggete)
-var nonNumero = (typeof nomeProdotto) ? true : false;
+var nonNumero = (typeof nomeProdotto === "string") ? true : false;
+console.log(nonNumero);
+var nonNumero = (typeof nomeProdotto == "string") ? true : false;
 console.log(nonNumero);
 
 // utilizzo dello statement "typeof"
