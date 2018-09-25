@@ -16,8 +16,8 @@
  */
 
 
-// Check se la somma va oltre la soglia prevista 
 /**
+ * Check se la somma va oltre la soglia prevista 
  * 
  * @param {number} sumCard 
  */
@@ -31,6 +31,7 @@ function over15(sumCard) {
 
 
 /**
+ * Check the winner of game!
  * 
  * @param {number} dealer 
  * @param {number} player 
@@ -45,12 +46,11 @@ function majorSum(dealer, player) {
 };
 
 
-
-// Generazione somma carte con funzione 
-// numCard = numero totali delle carte da generare
-// Totale = variabile d'appoggio dove mettere la somma
-
 /**
+ * Generazione somma carte con funzione 
+ * numCard = numero totali delle carte da generare
+ * Totale = variabile d'appoggio dove mettere la somma
+ * 
  * 
  * @param {number} numCard 
  * @param {number} total 
