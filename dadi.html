@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <div class="TiroA">
+        <h1>Dado A</h1>
+        <a>
+            <img id="Img1" onclick="TiroA()" src="dado.png">
+        </a>
+    </div>
+    <div class="TiroA">
+        <h1>Dado B</h1>
+        <a>
+            <img id="Img2" onclick="TiroB()" src="dado.png">
+        </a>
+    </div>
+    <script type="text/javascript">
+
+        var vittoriaConsecutiva = 0,
+            numeroA = 0,
+            numeroB = 0,
+            vittoriaA = 0,
+            vittoriaB = 0;
+
+        
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById('Img1').addEventListener('load', function() {
+                var that = this;
+                this.classList.toggle('ruota');
+                setTimeout(function() {
+                    that.classList.toggle('ruota');
+                }, 2000);
+            });
+            document.getElementById('Img2').addEventListener('load', function() {
+                var that = this;
+                this.classList.toggle('ruota');
+                setTimeout(function() {
+                    that.classList.toggle('ruota');
+                }, 2000);
+            });
+            document.getElementById('Img2').addEventListener('click', function() {
+                var that = this;
+                this.classList.toggle('ruota');
+                setTimeout(function() {
+                    that.classList.toggle('ruota');
+                }, 2000);
+            });
+            document.getElementById('Img1').addEventListener('click', function() {
+                var that = this;
+                this.classList.toggle('ruota');
+                setTimeout(function() {
+                    that.classList.toggle('ruota');
+                }, 2000);
+            });
+        });
+
+        function TiroA() {
+            //Switch per i tiri tra i partecipanti
+            if (numeroB == 0 && numeroA == 0) {
+
+                numeroA = Math.floor((Math.random() * 6) + 1);
+                console.log("Tiro da " + numeroA);
+                
+            } else if (numeroA == 0 && numeroB != 0) {
+
+                numeroA = Math.floor((Math.random() * 6) + 1);
+                console.log("Tiro da " + numeroA);
+                
+            }
+
+            if (numeroA != 0 && numeroB != 0) {
+                vittoriaConsecutiva = checkVittoria(numeroA, numeroB);
+
+                //Controllo per vittorie negative
+                if (vittoriaA < 0) {
+                    vittoriaA = 0;
+                }
+                if (vittoriaB < 0) {
+                    vittoriaB = 0;
+                }
+
+                //Switch con vittorie e vittorie totale
+                checkVittoriaConsecutiva();
+            }
+        }
+
+
+
+        function TiroB() {
+            //Switch per i tiri tra i partecipanti
+            if (numeroA == 0 && numeroB == 0) {
+
+                numeroB = Math.floor((Math.random() * 6) + 1);
+                console.log("Tiro da " + numeroB);
+
+            } else if (numeroB == 0 && numeroA != 0) {
+
+                numeroB = Math.floor((Math.random() * 6) + 1);
+                console.log("Tiro da " + numeroB);
+
+            }
+
+            if (numeroA != 0 && numeroB != 0) {
+                vittoriaConsecutiva = checkVittoria(numeroA, numeroB);
+
+                //Controllo per vittorie negative
+                if (vittoriaA < 0) {
+                    vittoriaA = 0;
+                }
+                if (vittoriaB < 0) {
+                    vittoriaB = 0;
+                }
+
+                //Switch con vittorie e vittorie totale
+                checkVittoriaConsecutiva();
+            }
+        }
+
+        function checkVittoriaConsecutiva() {
+            switch (vittoriaConsecutiva) {
+                case 1:
+                    {
+                        if (vittoriaA >= 2) {
+                            console.log("Perde il primo tizio!");
+                        } else {
+                            console.log("Vince il primo tizio!");
+                        }
+                        vittoriaA++;
+                        vittoriaB--;
+                        break;
+                    }
+                case 2:
+                    {
+                        if (vittoriaB >= 2) {
+                            console.log("Perde il secondo tizio!");
+                        } else {
+                            console.log("Vince il secondo tizio!");
+                        }
+                        vittoriaB++;
+                        vittoriaA--;
+                        break;
+                    }
+                case 0:
+                    {
+                        console.log("Pareggio!");
+                        vittoriaB--;
+                        vittoriaA--;
+                        break;
+                    }
+                default: {
+                    console.log("errore!");
+                    break;
+                }
+            }
+            numeroA = 0;
+            numeroB = 0;
+        }
+
+        function checkVittoria(dadoA, dadoB) {
+            if (dadoA > dadoB) {
+                return 1;
+            } else if (dadoA < dadoB) {
+                return 2;
+            } else {
+                return 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

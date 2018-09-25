@@ -15,6 +15,7 @@
  *
  */
 
+
 /**
  * Check se la somma va oltre la soglia prevista 
  * 

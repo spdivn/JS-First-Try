@@ -1,0 +1,33 @@
+body{
+    background: rgb(48, 185, 59);
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.TiroA{
+    text-align: center;
+    margin: auto 0;
+    width: 50%;
+}
+a{
+    width: 512px;
+    height: 512px;
+}
+.ruota {
+    animation: 2s RuotaDado ;
+}
+
+img{
+    cursor: pointer;
+}
+
+@keyframes RuotaDado{
+    0%{
+        transform: translateY(-800px) rotate(0) rotateY(0);
+    }
+    
+    100%{
+        transform: translateY(0) rotate(1440deg) rotateY(1440deg);
+    }
+}
