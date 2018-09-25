@@ -51,20 +51,22 @@
 
     // Increment / Decrement
         // ++ increment
-        1++;
+        1++;// Sbagliato
+        1+1;//giusto
+        a++; //giusto
         // -- decrement
         2--;
 
     // Equity
         // ==   loose-equals
-        2 == "2";
-        2 == 2;
+        2 == "2"; //return true perche non controlla i tipi ma i valori
+        2 == 2; 
         // !=   loose not-equals
         2 != "1";
         2 != 1;
-        // ===  strict-equals
-        2 == "2";
-        2 == 2;
+        // ===  strict-equals Condisera anche i tipi con i tre uguali 
+        2 === "2"; //ritorna false perche i tipi sono diversi
+        2 === 2; //ritorna true perche sono uguali come tipologia
         // !==  strict not-equals
         2 !== "2";
         2 !== 2;

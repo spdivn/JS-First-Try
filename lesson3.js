@@ -5,7 +5,7 @@
 const incrementoPrezzoProdotto = 1.2;
 prezzoProdotto = prezzoProdotto * incrementoPrezzoProdotto; // moltiplicazione tra variabili di tipo "number"
 
-var prezzoConMoneta = prezzoProdotto + "€"; // addizione tra numero e stringa
+var prezzoConMoneta = prezzoProdotto + '€'; // addizione tra numero e stringa
 
 var nomeProdotto2 = nomeProdotto + " e Quadretto"; // addizione tra variabili di tipo "stringa"
 var prezzoProdotto2 = prezzoProdotto + 50;
@@ -18,6 +18,8 @@ console.log(nomeProdotto);
 console.log("CIAO");
 console.log(2);
 console.log({});
+
+//debugger = Breakpoint di VS ferma il codice in quel punto se aperta la console
 
 // "if" "else if" "else" "ternary"
 // Sono 4 statement utilizzati per il controllo del flusso dei dati
@@ -39,7 +41,7 @@ if (typeof incrementoPrezzoProdotto == "string") {
 }
 
 // ternary (io la chiamo "if inline" però non ascoltatemi/leggete)
-var nonNumero = (typeof nomeProdotto === "string") ? true : false;
+var nonNumero = (typeof nomeProdotto === "string") ? true : false; // true e false possono essere cambiati con altre assegnazioni 
 console.log(nonNumero);
 var nonNumero = (typeof nomeProdotto == "string") ? true : false;
 console.log(nonNumero);

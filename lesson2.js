@@ -26,7 +26,13 @@ quantitaProdotto = 10;
  * 
  * Altri tipi di variabile
  */
-
+/*  Tipi
+    Stringa Numero       
+    Booleno 
+    Array
+    Oggetti
+    Funzioni
+*/
 vendibilitaProdotto = true; // Boolean - può assumere valore true o false
 attributiProdotto = {}; // oggetti
 categorieProdotto = []; // array
@@ -38,3 +44,29 @@ assegnaTagProdotto = function(){}; // function
 const PercentualeTassazione = 5; // costante
 let contatoreInterno = 0;        // particolare tipologia di "var"
 // Entrambe proprio come var hanno varia tipologie di variabile che sono le stesse.
+
+
+//Block statemant
+/* 
+{
+    Funzioni e variabili
+    se dichiariamo la variabile muore al difuori di essa
+}
+
+const è costante
+ma se un array si limita solo nell oggetto e non nelle variabili interne 
+
+var si aggangia alla funzione piu vicina o meglio superiore
+for (var i=0; i<255;i++){
+
+}
+i mantiene il valore e continua a vivere al di fuori del for
+
+
+
+let si aggangia al blocco
+for (let i=0; i<255;i++){
+
+}
+i non esiste e muore nel blocco del for
+*/
