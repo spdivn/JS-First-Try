@@ -13,7 +13,6 @@
  */
 
 var vittoriaConsecutiva = 0,
-<<<<<<< HEAD
     numeroA = 0,
     numeroB = 0,
     vittoriaA = 0,
