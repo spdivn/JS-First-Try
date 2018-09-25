@@ -23,17 +23,19 @@ function over15(sumCard) {
     } else {
         return sumCard;
     }
-}
+};
+
 
 // Check vicintore
-function majorSum(banker, player) {
+function majorSum(dealer, player) {
 
-    if (banker > player || banker == player) {
-        console.log("Banker wins!");
+    if (dealer > player || dealer == player) {
+        console.log("Dealer wins!");
     } else {
         console.log("Player wins!");
     }
-}
+};
+
 
 
 // Generazione somma carte con funzione 
@@ -50,16 +52,22 @@ function genCard(numCard, total) {
     }
     //Check over 15
     return over15(total);
-}
+};
+
+
+
 //Generazione somma carte tramite funzioni
 var playerCard = genCard(2, 0);
-var bankerCard = genCard(2, 0);
+var dealerCard = genCard(2, 0);
+
 
 //Stampa della somma delle carte del banchiere
-console.log("The sum of banker cards is " + bankerCard);
+console.log("The sum of dealer cards is " + dealerCard);
+
 
 //Stampa della somma delle carte del player
 console.log("The sum of player cards is" + playerCard);
 
+
 // Check vicintore
-majorSum(bankerCard, playerCard);
+majorSum(dealerCard, playerCard);
