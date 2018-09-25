@@ -17,6 +17,10 @@
 
 
 // Check se la somma va oltre la soglia prevista 
+/**
+ * 
+ * @param {number} sumCard 
+ */
 function over15(sumCard) {
     if (sumCard > 15) {
         return 0;
@@ -26,7 +30,11 @@ function over15(sumCard) {
 };
 
 
-// Check vicintore
+/**
+ * 
+ * @param {number} dealer 
+ * @param {number} player 
+ */
 function majorSum(dealer, player) {
 
     if (dealer >= player) {
@@ -42,6 +50,11 @@ function majorSum(dealer, player) {
 // numCard = numero totali delle carte da generare
 // Totale = variabile d'appoggio dove mettere la somma
 
+/**
+ * 
+ * @param {number} numCard 
+ * @param {number} total 
+ */
 function genCard(numCard, total) {
     for (var i = 0; i < numCard; i++) {
         if (total == 0) {
