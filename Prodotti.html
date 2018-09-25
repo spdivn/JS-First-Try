@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="test5.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-menu">
+        <img  src="pizza.png">
+        <div>Pizza</div>
+        <div>
+            <input id="pizza" type="number" />
+        </div>
+        <div>
+            <input id="prendiPizza" onclick="getData('pizza')" value="Acquista" type="button" />
+        </div>
+    </div>
+    <div class="container-menu">
+        <img src="piadina.png">
+        <div>Piadina</div>
+        <div>
+            <input id="piadina" type="number" />
+        </div>
+        <div>
+            <input id="prendiPiadina" onclick="getData('piadina')" value="Acquista" type="button" />
+        </div>
+    </div>
+    <div class="container-menu">
+        <img src="kebab.png">
+        <div>Kebab</div>
+        <div>
+            <input id="kebab" type="number" />
+        </div>
+        <div>
+            <input id="prendiKebab" onclick="getData('kebab')" value="Acquista" type="button" />
+        </div>
+    </div>
+    <script type="text/javascript">
+        const costo_pizza = 8,
+            costo_piadina = 5,
+            costo_kebab = 4.5,
+            quantityOfPizza = 10,
+            quantityOfPiadine = 30,
+            quantityOfKebab = 20,
+            taxRate = 21,
+            shippingPricePizza = 1,
+            shippingPriceOther = 0.5;
+
+        function getData(productName) {
+            if (document.getElementById(productName).value > 0) {
+                getTotalPrice(productName);
+            }
+            return document.getElementById(productName).value;
+        }
+
+        function getTotalPrice(productName) {
+
+            var totalOfProduct = parseInt(document.getElementById(productName).value);
+
+            switch (productName) {
+                case "pizza":
+                    {
+                        if (totalOfProduct <= quantityOfPizza) {
+                            //Calcolo prezzo della pizza totale
+                            var totalPrice = costo_pizza * totalOfProduct;
+
+                            //Totale delle tasse da pagare
+                            var totalPriceTax = totalPrice * (21 / 100);
+
+                            //Aggiunta tasse
+                            totalPrice = totalPrice + totalPriceTax;
+
+                            //Aggiunta spedizione
+                            totalPrice = totalPrice + (shippingPricePizza * totalOfProduct);
+
+                            //Stampa totale della pizza
+                            console.log("Pizza's order is " + totalPrice + "$.");
+
+                        } else {
+                            console.log("I'm sorry but we don't have this quantity of pizza");
+                        }
+                        break;
+                    }
+                case "kebab":
+                    {
+                        if (totalOfProduct <= quantityOfPiadine) {
+                            //Calcolo prezzo della pizza totale
+                            var totalPrice = costo_piadina * totalOfProduct;
+
+                            //Totale delle tasse da pagare
+                            var totalPriceTax = totalPrice * (21 / 100);
+
+                            //Aggiunta tasse
+                            totalPrice = totalPrice + totalPriceTax;
+
+                            //Aggiunta spedizione
+                            totalPrice = totalPrice + (shippingPriceOther * totalOfProduct);
+
+                            //Stampa totale della pizza
+                            console.log("Piadina's order is " + totalPrice + "$.");
+                        } else {
+                            console.log("I'm sorry but we don't have this quantity of piadina");
+                        }
+                        break;
+                    }
+                case "piadina":
+                    {
+                        if (totalOfProduct <= quantityOfKebab) {
+                            //Calcolo prezzo della pizza totale
+                            var totalPrice = costo_kebab * totalOfProduct;
+
+                            //Totale delle tasse da pagare
+                            var totalPriceTax = totalPrice * (21 / 100);
+
+                            //Aggiunta tasse
+                            totalPrice = totalPrice + totalPriceTax;
+
+                            //Aggiunta spedizione
+                            totalPrice = totalPrice + (shippingPriceOther * totalOfProduct);
+
+                            //Stampa totale della pizza
+                            console.log("Kebab's order is " + totalPrice + "$.");
+                        } else {
+                            console.log("I'm sorry but we don't have this quantity of kebab");
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+        }
+    </script>
+</body>
+
+</html>
