@@ -61,7 +61,7 @@ var playerCard = genCard(2, 0);
 var dealerCard = genCard(2, 0);
 
 
-//Stampa della somma delle carte del banchiere
+//Stampa della somma delle carte del dealer
 console.log("The sum of dealer cards is " + dealerCard);
 
 
