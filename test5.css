@@ -9,6 +9,7 @@ img{
     margin-right: 10px;
     margin-left: 10px;
     min-width: 300px;
+    max-height: 450px;
 }
 input{
     width: 45%;
@@ -31,4 +32,11 @@ body{
     display: flex; 
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+}
+
+.notActive{
+    display: none;
+}
+input:disabled{
+    cursor: not-allowed;
 }

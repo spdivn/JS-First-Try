@@ -45,6 +45,32 @@ ____________________|____________________|____________________|
 */
 
 //Variable for calc of total price
+const isActive = [false, true, true],
+    shopCartDiv = ['pizzaDiv', 'piadinaDiv', 'kebabDiv'],
+    shopCartInput = ['prendiPizza', 'prendiPiadina', 'prendiKebab'],
+    shopCartInputNumber = ['pizza', 'piadina', 'kebab'],
+    isInStock = [true, true, false],
+    isWarehouseClose = [true, true, true];
+
+
+for (let i = 0; i < isActive.length; i++) {
+    if (!isActive[i]) {
+        document.getElementById(shopCartDiv[i]).classList.add('notActive');
+    }
+}
+for (let i = 0; i < isInStock.length; i++) {
+    if (!isInStock[i]) {
+        let Buttons = document.getElementById(shopCartInput[i]);
+        Buttons.value = 'Non in stock';
+        Buttons.setAttribute('disabled', 'true');
+        document.getElementById(shopCartInputNumber[i]).setAttribute('disabled', 'true');
+        if (isWarehouseClose[i]) {
+            var paragraph = document.getElementById(shopCartDiv[i]);
+            var text = document.createTextNode("You can find this items in warehouse close to you!");
+            paragraph.appendChild(text);
+        }
+    }
+}
 const costo_pizza = 8,
     costo_piadina = 5,
     costo_kebab = 4.5,
@@ -55,10 +81,6 @@ const costo_pizza = 8,
     shippingPricePizza = 1,
     shippingPriceOther = 0.5;
 
-/**
- * 
- * @param {string} productName 
- */
 function getData(productName) {
     if (document.getElementById(productName).value > 0) {
         getTotalPrice(productName);
@@ -66,13 +88,9 @@ function getData(productName) {
     return document.getElementById(productName).value;
 }
 
-/**
- * 
- * @param {string} productName 
- */
 function getTotalPrice(productName) {
 
-    var totalOfProduct = document.getElementById(productName).value;
+    var totalOfProduct = parseInt(document.getElementById(productName).value);
 
     switch (productName) {
         case "pizza":
@@ -144,7 +162,6 @@ function getTotalPrice(productName) {
             }
         default:
             {
-                console.log("We don't have this kind of food");
                 break;
             }
     }

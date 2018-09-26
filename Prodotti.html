@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <div class="container-menu">
-        <img  src="pizza.png">
+    <div class="container-menu" id="pizzaDiv">
+        <img src="pizza.png">
         <div>Pizza</div>
         <div>
             <input id="pizza" type="number" />
@@ -17,7 +17,7 @@
             <input id="prendiPizza" onclick="getData('pizza')" value="Acquista" type="button" />
         </div>
     </div>
-    <div class="container-menu">
+    <div class="container-menu" id="piadinaDiv">
         <img src="piadina.png">
         <div>Piadina</div>
         <div>
@@ -27,7 +27,7 @@
             <input id="prendiPiadina" onclick="getData('piadina')" value="Acquista" type="button" />
         </div>
     </div>
-    <div class="container-menu">
+    <div class="container-menu" id="kebabDiv">
         <img src="kebab.png">
         <div>Kebab</div>
         <div>
@@ -38,6 +38,33 @@
         </div>
     </div>
     <script type="text/javascript">
+        const isActive = [false, true, true],
+            shopCartDiv = ['pizzaDiv', 'piadinaDiv', 'kebabDiv'],
+            shopCartInput = ['prendiPizza', 'prendiPiadina', 'prendiKebab'],
+            shopCartInputNumber = ['pizza', 'piadina', 'kebab'],
+            isInStock = [true, true, false],
+            isWarehouseClose = [true, true, true];
+
+
+        for (let i = 0; i < isActive.length; i++) {
+            if (!isActive[i]) {
+                document.getElementById(shopCartDiv[i]).classList.add('notActive');
+            }
+        }
+        for (let i = 0; i < isInStock.length; i++) {
+            if (!isInStock[i]) {
+                let Buttons = document.getElementById(shopCartInput[i]);
+                Buttons.value = 'Non in stock';
+                Buttons.setAttribute('disabled', 'true');
+                document.getElementById(shopCartInputNumber[i]).setAttribute('disabled', 'true');
+                if (isWarehouseClose[i]) {
+                    var paragraph = document.getElementById(shopCartDiv[i]);
+                    var text = document.createTextNode("You can find this items in warehouse close to you!");
+                    paragraph.appendChild(text);
+                }
+            }
+        }
+
         const costo_pizza = 8,
             costo_piadina = 5,
             costo_kebab = 4.5,
