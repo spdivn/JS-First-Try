@@ -22,16 +22,15 @@
 // const createBigCircle = functionFactory(.....);
 // ```
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(displayWidth, displayHeight);
     background(0);
 }
 
 
 function factory(r) {
-    let R=r;
     function genera(X,Y) {
         fill(255);
-        ellipse(X, Y, R,R);
+        ellipse(X, Y, r,r);
     }
     return genera;
 }
