@@ -13,7 +13,7 @@
 // {
 //     x: Number,
 //     y: Number,
-//     radius: Number 
+//     radius: Number  
 // }
 
 
