@@ -28,12 +28,9 @@ function setup() {
 
 
 function factory(x, y, r) {
-    let X=x;
-    let Y=y;
-    let R=r;
     function genera() {
         fill(255);
-        ellipse(X, Y, R,R);
+        ellipse(x, y, r, r);
     }
     return genera;
 }
