@@ -9,16 +9,68 @@ body{
     text-align: center;
     margin: auto 0;
     width: 50%;
+    position: absolute;
+    top: 100px;
 }
+
+.TiroA:nth-child(5){
+    left: 50%;
+}
+
+div:nth-child(3){
+    position: fixed;
+    top: 5%;
+    left: 45%;
+}
+[type="number"]{    
+    width: 200px;
+    top: 5%;
+    left: 45%;
+}
+
 a{
     width: 512px;
     height: 512px;
 }
+
 .ruota {
     animation: 2s RuotaDado ;
 }
 
 img{
+    cursor: pointer;
+}
+
+input{
+    margin: 5%;
+    margin-top: 6%;
+}
+
+label{
+    margin-left: -5%;
+}
+
+.rad{
+    width: 50%;
+    text-align: center;
+}
+
+span{
+    margin-top: 25%;
+    width: 270px;
+    text-align: center;
+    color: white;
+}
+
+h1{    
+    color: white;
+}
+
+[type="radio"]{
+    border: 1px dotted rgb(57, 204, 167);
+}
+
+[type="radio"]+label{
     cursor: pointer;
 }
 
