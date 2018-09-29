@@ -20,20 +20,21 @@ var vittoria = 0,
 let app = [];
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    document.getElementById('Img1').addEventListener('load', function () {
-        var that = this;
-        this.classList.toggle('ruota');
-        setTimeout(function () {
-            that.classList.toggle('ruota');
-        }, 2000);
-    });
-    document.getElementById('Img2').addEventListener('load', function () {
-        var that = this;
-        this.classList.toggle('ruota');
-        setTimeout(function () {
-            that.classList.toggle('ruota');
-        }, 2000);
-    });
+    // TODO: 
+    // document.getElementById('Img1').addEventListener('load', function () {
+    //     var that = this;
+    //     this.classList.toggle('ruota');
+    //     setTimeout(function () {
+    //         that.classList.toggle('ruota');
+    //     }, 2000);
+    // });
+    // document.getElementById('Img2').addEventListener('load', function () {
+    //     var that = this;
+    //     this.classList.toggle('ruota');
+    //     setTimeout(function () {
+    //         that.classList.toggle('ruota');
+    //     }, 2000);
+    // });
     document.getElementById('Img2').addEventListener('click', function () {
         var that = this;
         this.classList.toggle('ruota');
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     statExtra.addEventListener("focusout", function () {
         if (statExtra.value > 50) {
+            statExtra.focus();
             alert("I valori ammessi sono max 50");
         } else if (statExtra.value <= 50 && statExtra.value < 0) {
             alert("I valori ammessi sono solo positivi");

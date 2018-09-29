@@ -18,7 +18,7 @@ body{
 }
 
 div:nth-child(3){
-    position: fixed;
+    position: absolute;
     top: 5%;
     left: 45%;
 }
@@ -42,12 +42,12 @@ img{
 }
 
 input{
-    margin: 5%;
+    margin: 2%;
     margin-top: 6%;
 }
 
 label{
-    margin-left: -5%;
+    margin-left: -2%;
 }
 
 .rad{
@@ -64,10 +64,6 @@ span{
 
 h1{    
     color: white;
-}
-
-[type="radio"]{
-    border: 1px dotted rgb(57, 204, 167);
 }
 
 [type="radio"]+label{
