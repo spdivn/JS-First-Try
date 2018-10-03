@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // setting variables to play
     var players = {
         names: {},
         launch: [], //array of "number => launch" for each player
-        number: function(object) {
+        number: function (object) {
             var size = 0;
             for (key in object) {
-                if (object.hasOwnProperty(key)) size++;
+                if (object.hasOwnProperty(key)) {
+                    size++;
+                };
             }
             return size;
         }
@@ -27,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function addListeners() {
         var buttonsToPlay = document.querySelectorAll('.box button');
-        for ( let index = 0; index < buttonsToPlay.length; index++ ) {
+        for (let index = 0; index < buttonsToPlay.length; index++) {
             const element = buttonsToPlay[index];
-            element.addEventListener('click', function() {
+            element.addEventListener('click', function () {
                 if (typeof this.getAttribute('data-player') !== 'undefined') {
                     var thisPlayer = this.getAttribute('data-player'),
-                        checkPlayerExist = false;                    
-                    for ( let prop in players.names ) {
+                        checkPlayerExist = false;
+                    for (let prop in players.names) {
                         if (prop == thisPlayer) {
                             checkPlayerExist = true;
                             thisPlayer = prop;
@@ -56,25 +58,28 @@ document.addEventListener('DOMContentLoaded', function() {
     function canPlay(thisPlayer) {
 
 
-        
+
     }
 
     function player_Play(thisPlayer) {
         // TODO: Find if this player can play
-            if (game.launch.length == 0 || canPlay(thisPlayer)) {
-                // TODO: Let this player play
-                launch(thisPlayer);
-            }
+        if (game.launch.length == 0 || canPlay(thisPlayer)) {
+            // TODO: Let this player play
+            launch(thisPlayer);
+        }
         // TODO: Find how many players should play now
-            // TODO: Warn them
+        // TODO: Warn them
     }
 
     function launch() {
         var valueOfLaunch = getRandomValue();
         players.launch.push(valueOfLaunch);
-        players.
-        checkWinner();
+        // players.
+        if (players.launch.length >= 2) {
+            checkWinner();
+        }
     }
+
     function player2_Play() {
         if (tiro2 <= tiro1) {
             player2 = getRandomValue();
@@ -84,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function checkWinner() {
+    function checkWinner(tiro1, tiro2) {
         if (tiro1 == tiro2) {
             if (player1 > player2) {
                 vittoriaConsA++;
