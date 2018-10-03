@@ -1,7 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
+//document.addEventListener('DOMContentLoaded', function () {
+
     // setting variables to play
     var players = {
-        names: {},
+        names: [],
         launch: [], //array of "number => launch" for each player
         number: function (object) {
             var size = 0;
@@ -36,17 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     var thisPlayer = this.getAttribute('data-player'),
                         checkPlayerExist = false;
                     for (let prop in players.names) {
-                        if (prop == thisPlayer) {
+                        if (players.names[prop] == thisPlayer) {
                             checkPlayerExist = true;
                             thisPlayer = prop;
                         }
                     }
+
+                    //or
+
+                    // for (let prop of players.names) {
+                    //     if (prop == thisPlayer) {
+                    //         checkPlayerExist = true;
+                    //         thisPlayer = prop;
+                    //     }
+                    // }
+
                     if (checkPlayerExist) {
                         // init player games
                         player_Play(players.names[thisPlayer]);
                     } else {
-                        var thisPlayerNumber = players.number(players.number) + 1;
-                        players.names[thisPlayerNumber] = this.getAttribute('data-player');
+                        var thisPlayerNumber = players.number(players.names) + 1;
+                        players.names[thisPlayerNumber] = thisPlayer;
                         // init player games
                         player_Play(players.names[thisPlayerNumber]);
                     }
@@ -109,4 +120,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // launch functions
     addListeners();
-})
+//})
